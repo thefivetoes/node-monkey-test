@@ -10,6 +10,12 @@ app.get('/', function(req, res) {
   console.log('someone connected');
 });
 
+app.post('/github', function(request, response){
+
+    console.log(request);
+
+});
+
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
