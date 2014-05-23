@@ -7,17 +7,14 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  res.send('Hello World!?');
-  console.log('someone connected');
+  res.send('hey go ahead and push some github webhooks to /github.');
 });
 
 app.use(bodyParser());
 
 app.post('/github', function(request, response){
-
   console.log(request.body);
   response.send(request.body);
-
 });
 
 var port = Number(process.env.PORT || 5000);
