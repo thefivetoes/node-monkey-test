@@ -10,7 +10,7 @@ app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
   var output = '';
-  if( "repository" in payload ){
+  if( payload.repository !== undefined  ){
     output += '<span>update to <em>' + payload.repository.url + '</em></span>';
     output += '<span>latest push by <em>'+payload.pusher.name+'</em></span>';
   }
