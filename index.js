@@ -10,11 +10,11 @@ app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
   var output = '';
-  if( payload.repository !== undefined  ){
+  try{
     output += '<span>update to <em>' + payload.repository.url + '</em></span>';
     output += '<span>latest push by <em>'+payload.pusher.name+'</em></span>';
   }
-  else{
+  catch(e){
     output += '<span>nothing to report. push some github webhooks to /github</span>';
   }
   res.send( output );
