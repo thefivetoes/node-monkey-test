@@ -1,19 +1,18 @@
 {
   "name": "node-monkey-test",
   "version": "0.0.1",
-  "description": "test for github webhook",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "logfmt": "^1.1.2",
-    "express": "^4.3.0",
-    "body-parser": "^1.2.0"
-  },
-  "engines": {
-    "node": "0.10.x"
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "less-middleware": "1.0.x"
   }
 }

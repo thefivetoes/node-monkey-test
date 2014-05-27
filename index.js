@@ -7,17 +7,21 @@ var app = express();
 var payload = {};
 
 app.use(logfmt.requestLogger());
+app.set('view engine', 'jade');
 
 app.get('/', function(req, res) {
   var output = '';
-  try{
-    output += '<span>update to <em>' + payload.repository.url + '</em></span>';
-    output += '<span>latest push by <em>'+payload.pusher.name+'</em></span>';
-  }
-  catch(e){
-    output += '<span>nothing to report. push some github webhooks to /github</span>';
-  }
-  res.send( output );
+  // try{
+  //   output += '<span>update to <em>' + payload.repository.url + '</em></span>';
+  //   output += '<span>latest push by <em>'+payload.pusher.name+'</em></span>';
+  // }
+  // catch(e){
+  //   output += '<span>nothing to report. push some github webhooks to /github</span>';
+  // }
+  // res.send( output );
+  res.render('index', {
+    title: 'hi'
+  });
 });
 
 app.use(bodyParser());
